@@ -13,8 +13,9 @@ class App extends Component {
     }
   };
   change = e => {
+    console.log(e.target.id);
     this.setState({
-      number: e
+      number: e.target.id
     });
   };
 
@@ -29,7 +30,7 @@ class App extends Component {
         >
           1
         </button>
-        { <button
+        <button
           onClick={n => {
             this.change(n);
           }}
@@ -90,7 +91,7 @@ class App extends Component {
           }}
         >
           9
-        </button> }
+        </button>
         <Fact number={this.state.number} fact={this.fact(this.state.number)} />
       </div>
     );
